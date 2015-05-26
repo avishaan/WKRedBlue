@@ -10,8 +10,28 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="RedVsBlue_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="1" alignment="left" id="ReN-Ob-rRa"/>
+                        <group width="1" alignment="left" layout="vertical" id="ReN-Ob-rRa">
+                            <items>
+                                <label alignment="left" text="Cool" id="ezZ-O4-U70"/>
+                                <slider width="1" alignment="left" value="1" minimum="0.10000000000000001" steps="8" id="VRJ-ic-7DJ">
+                                    <connections>
+                                        <action selector="sliderPressed:" destination="AgC-eL-Hgc" id="dZD-H0-wJT"/>
+                                    </connections>
+                                </slider>
+                                <switch width="1" alignment="left" value="YES" title="Red/Blue" id="Nzk-pA-puS">
+                                    <connections>
+                                        <action selector="switchPressed:" destination="AgC-eL-Hgc" id="1Gg-ht-7Fk"/>
+                                    </connections>
+                                </switch>
+                            </items>
+                        </group>
                     </items>
+                    <connections>
+                        <outlet property="mainGroup" destination="ReN-Ob-rRa" id="u20-Ld-Lxk"/>
+                        <outlet property="mainLabel" destination="ezZ-O4-U70" id="25b-jf-zK4"/>
+                        <outlet property="mainSlider" destination="VRJ-ic-7DJ" id="7Tu-6Z-jlP"/>
+                        <outlet property="mainSwitch" destination="Nzk-pA-puS" id="rqq-YL-IvR"/>
+                    </connections>
                 </controller>
             </objects>
         </scene>

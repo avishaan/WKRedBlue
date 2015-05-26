@@ -12,6 +12,11 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
   
+  @IBOutlet weak var mainGroup: WKInterfaceGroup!
+  @IBOutlet weak var mainSlider: WKInterfaceSlider!
+  @IBOutlet weak var mainSwitch: WKInterfaceSwitch!
+  @IBOutlet weak var mainLabel: WKInterfaceLabel!
+  
   override func awakeWithContext(context: AnyObject?) {
     super.awakeWithContext(context)
     
@@ -26,6 +31,24 @@ class InterfaceController: WKInterfaceController {
   override func didDeactivate() {
     // This method is called when watch view controller is no longer visible
     super.didDeactivate()
+  }
+  
+  @IBAction func sliderPressed(value: Float) {
+    // convert from float to alpha
+    let alpha = CGFloat(value)
+    mainSlider.setAlpha(alpha)
+    mainSwitch.setAlpha(alpha)
+    mainLabel.setAlpha(alpha)
+  }
+  @IBAction func switchPressed(value: Bool) {
+    if value {
+      mainGroup.setBackgroundColor(UIColor.blueColor())
+      mainLabel.setText("Blue")
+    } else {
+      mainGroup.setBackgroundColor(UIColor.redColor())
+      mainLabel.setText("Red")
+    }
+    
   }
   
 }
