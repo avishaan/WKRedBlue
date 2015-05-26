@@ -36,9 +36,10 @@ class InterfaceController: WKInterfaceController {
   @IBAction func sliderPressed(value: Float) {
     // convert from float to alpha
     let alpha = CGFloat(value)
-    mainSlider.setAlpha(alpha)
-    mainSwitch.setAlpha(alpha)
-    mainLabel.setAlpha(alpha)
+//    mainSlider.setAlpha(alpha)
+//    mainSwitch.setAlpha(alpha)
+//    mainLabel.setAlpha(alpha)
+    mainGroup.setAlpha(alpha)
   }
   @IBAction func switchPressed(value: Bool) {
     if value {
